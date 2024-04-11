@@ -1,0 +1,66 @@
+.tip {
+  position: relative;
+  padding-top: rem(16);
+  &__icon {
+    display: inline-flex;
+    color: #fff;
+    border-radius: 50%;
+    font-size: rem(30);
+    padding-bottom: rem(12);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__message {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(4);
+    background-color: #fff;
+    width: rem(560);
+    top: rem(58);
+    left: 0;
+    border-radius: rem(8);
+    font-size: rem(18);
+    padding: rem(16);
+    transform: translateY(12px);
+    transition: all ease 0.3s;
+    z-index: 3;
+
+    &_title {
+      font-weight: 700;
+      padding-bottom: rem(4);
+    }
+
+    &_info {
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: rem(6);
+        height: rem(6);
+        transform: translate(-150%, 100%);
+        border-radius: 50%;
+        background-color: #4a00e0;
+      }
+    }
+
+    &.active {
+      visibility: visible;
+      pointer-events: all;
+      opacity: 1;
+      transform: translateY(0);
+      transition: all ease 0.5s;
+    }
+
+    @media (max-width: $mobileSmall) {
+      width: 100%;
+    }
+  }
+}
