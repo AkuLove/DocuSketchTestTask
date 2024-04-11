@@ -44,6 +44,7 @@ function Home() {
           className={style.home__button}
           onClick={() => {
             setClicked((prev) => !prev);
+            // eslint-disable-next-line no-console
             console.log('Кнопка нажата');
           }}
           type="button"
