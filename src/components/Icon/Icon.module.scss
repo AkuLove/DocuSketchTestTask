@@ -1,0 +1,14 @@
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: rem(20);
+  font-size: rem(64);
+  padding-bottom: rem(20);
+  color: #fff;
+  font-size: rem(34);
+
+  svg {
+    font-size: rem(64);
+  }
+}

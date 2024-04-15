@@ -1,0 +1,16 @@
+.button {
+  background: linear-gradient(135deg, #feac5e, #c779d0, #4bc0c8);
+  background-size: 300% auto;
+  transition: 0.5s;
+  color: #fff;
+  padding: rem(12) rem(32);
+  border-radius: rem(32);
+  &:hover {
+    background-position: 100% 0;
+  }
+
+  &:active {
+    transition: 0.3s;
+    background-position: 50% 0;
+  }
+}

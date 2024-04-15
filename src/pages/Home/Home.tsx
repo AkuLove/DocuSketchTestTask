@@ -5,7 +5,6 @@ import {
 } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { useState } from 'react';
 import style from './Home.module.scss';
@@ -13,6 +12,7 @@ import { icons } from '../../constants';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import useDebounce from '../../hooks/useDebounce';
 import Tip from '../../components/Tip/Tip';
+import Icon from '../../components/Icon/Icon';
 
 library.add(fab, fas);
 
@@ -37,20 +37,11 @@ function Home() {
     <section className={style.home}>
       <Tip />
       <div className={style.home__content}>
-        <div className={style.home__icon}>
-          <FontAwesomeIcon icon={icon || getNewIconName()} />
-        </div>
-        <button
-          className={style.home__button}
-          onClick={() => {
-            setClicked((prev) => !prev);
-            // eslint-disable-next-line no-console
-            console.log('Кнопка нажата');
-          }}
-          type="button"
-        >
-          Change icon
-        </button>
+        <Icon
+          icon={icon}
+          getNewIconName={getNewIconName}
+          setClicked={setClicked}
+        />
       </div>
     </section>
   );
